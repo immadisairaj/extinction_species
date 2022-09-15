@@ -9,8 +9,8 @@ Specie specieFromJson(String str) => Specie.fromJson(json.decode(str));
 String specieToJson(Specie data) => json.encode(data.toJson());
 
 class Specie {
-    String name;
-    List<Result> result;
+    String? name;
+    List<Result>? result;
 
     Specie({
         this.name,
@@ -24,21 +24,21 @@ class Specie {
 
     Map<String, dynamic> toJson() => {
         "name": name,
-        "result": List<dynamic>.from(result.map((x) => x.toJson())),
+        "result": List<dynamic>.from(result!.map((x) => x.toJson())),
     };
 }
 
 class Result {
-    int speciesId;
-    String taxonomicnotes;
-    String rationale;
-    String geographicrange;
-    String population;
-    String populationtrend;
-    String habitat;
-    String threats;
-    String conservationmeasures;
-    String usetrade;
+    int? speciesId;
+    String? taxonomicnotes;
+    String? rationale;
+    String? geographicrange;
+    String? population;
+    String? populationtrend;
+    String? habitat;
+    String? threats;
+    String? conservationmeasures;
+    String? usetrade;
 
     Result({
         this.speciesId,

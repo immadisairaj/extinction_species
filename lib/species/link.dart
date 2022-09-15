@@ -9,8 +9,8 @@ Link linkFromJson(String str) => Link.fromJson(json.decode(str));
 String linkToJson(Link data) => json.encode(data.toJson());
 
 class Link {
-    String rlurl;
-    String species;
+    String? rlurl;
+    String? species;
 
     Link({
         this.rlurl,

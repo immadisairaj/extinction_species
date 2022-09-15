@@ -14,7 +14,7 @@ description: Extinction of Species
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
@@ -22,14 +22,14 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^1.0.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  http: any
-  flutter_html: any
-  flutter_custom_tabs: "^0.6.0"
+  http: ^0.13.5
+  flutter_html: ^2.2.1
+  flutter_custom_tabs: "^1.0.4"
 
 
 # For information on the generic Dart part of this file, see the

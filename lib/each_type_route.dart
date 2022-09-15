@@ -4,8 +4,8 @@ import 'package:extinction_species/services.dart';
 import 'package:extinction_species/species/all_species.dart';
 
 class EachTypeRoute extends StatelessWidget {
-  String code;
-  Color color;
+  String? code;
+  Color? color;
   EachTypeRoute({this.code, this.color});
 
   @override
@@ -35,19 +35,19 @@ class EachTypeRoute extends StatelessWidget {
             );
           }
           return ListView.builder(
-            itemCount: snapshot.data.result.length,
+            itemCount: snapshot.data!.result!.length,
             itemBuilder: (context, position) {
               return Padding(
                 padding: EdgeInsets.only(left: 8.0, right: 8.0, bottom: 5.0),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => EachSpecieRoute(name: snapshot.data.result[position].scientificName, id: snapshot.data.result[position].taxonid, color: color,)));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => EachSpecieRoute(name: snapshot.data!.result![position].scientificName, id: snapshot.data!.result![position].taxonid, color: color,)));
                   },
                   child: Card(
                     child: Padding(
                       padding: EdgeInsets.only(left: 6.0, right: 6.0, top: 8.0, bottom: 8.0),
                       child: Text(
-                        '${snapshot.data.result[position].scientificName}',
+                        '${snapshot.data!.result![position].scientificName}',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,

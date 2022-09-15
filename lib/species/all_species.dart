@@ -9,9 +9,9 @@ AllSpecies allSpeciesFromJson(String str) => AllSpecies.fromJson(json.decode(str
 String allSpeciesToJson(AllSpecies data) => json.encode(data.toJson());
 
 class AllSpecies {
-    int count;
-    String category;
-    List<Result> result;
+    int? count;
+    String? category;
+    List<Result>? result;
 
     AllSpecies({
         this.count,
@@ -28,16 +28,16 @@ class AllSpecies {
     Map<String, dynamic> toJson() => {
         "count": count,
         "category": category,
-        "result": List<dynamic>.from(result.map((x) => x.toJson())),
+        "result": List<dynamic>.from(result!.map((x) => x.toJson())),
     };
 }
 
 class Result {
-    int taxonid;
-    String scientificName;
-    String subspecies;
-    Rank rank;
-    String subpopulation;
+    int? taxonid;
+    String? scientificName;
+    String? subspecies;
+    Rank? rank;
+    String? subpopulation;
 
     Result({
         this.taxonid,
@@ -59,7 +59,7 @@ class Result {
         "taxonid": taxonid,
         "scientific_name": scientificName,
         "subspecies": subspecies == null ? null : subspecies,
-        "rank": rank == null ? null : rankValues.reverse[rank],
+        "rank": rank == null ? null : rankValues.reverse![rank!],
         "subpopulation": subpopulation == null ? null : subpopulation,
     };
 }
@@ -74,11 +74,11 @@ final rankValues = EnumValues({
 
 class EnumValues<T> {
     Map<String, T> map;
-    Map<T, String> reverseMap;
+    Map<T, String>? reverseMap;
 
     EnumValues(this.map);
 
-    Map<T, String> get reverse {
+    Map<T, String>? get reverse {
         if (reverseMap == null) {
             reverseMap = map.map((k, v) => new MapEntry(v, k));
         }
